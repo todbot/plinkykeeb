@@ -9363,8 +9363,8 @@ DIN A3, landscape with location and doc. field</description>
 <plain>
 <text x="129.54" y="110.744" size="1.778" layer="97">From "3.4.1. PWM Audio" of
 "Hardware Design w/ RP2040"</text>
-<text x="190.5" y="110.744" size="1.778" layer="97">PWM AUDIO OUT</text>
-<text x="187.96" y="52.324" size="1.778" layer="97">TRS-A MIDI OUT</text>
+<text x="195.58" y="110.744" size="1.778" layer="97">PWM AUDIO OUT</text>
+<text x="195.58" y="54.864" size="1.778" layer="97">TRS-A MIDI OUT</text>
 </plain>
 <instances>
 <instance part="U1" gate="G$1" x="119.38" y="144.78" smashed="yes">
@@ -10739,13 +10739,14 @@ DIN A3, landscape with location and doc. field</description>
 <pinref part="LED18" gate="G$1" pin="DO"/>
 </segment>
 </net>
-<net name="N$45" class="0">
+<net name="MIDIOUT" class="0">
 <segment>
 <pinref part="R1" gate="G$1" pin="2"/>
 <pinref part="U1" gate="G$1" pin="TXO"/>
 <wire x1="109.22" y1="160.02" x2="88.9" y2="160.02" width="0.1524" layer="91"/>
 <wire x1="88.9" y1="160.02" x2="88.9" y2="71.12" width="0.1524" layer="91"/>
 <wire x1="88.9" y1="71.12" x2="175.26" y2="71.12" width="0.1524" layer="91"/>
+<label x="93.98" y="160.02" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="N$47" class="0">
@@ -10778,13 +10779,11 @@ DIN A3, landscape with location and doc. field</description>
 <net name="PWM_AUDIO" class="0">
 <segment>
 <pinref part="R7" gate="G$1" pin="2"/>
-<wire x1="132.08" y1="101.6" x2="127" y2="101.6" width="0.1524" layer="91"/>
-<wire x1="127" y1="101.6" x2="127" y2="119.38" width="0.1524" layer="91"/>
-<wire x1="127" y1="119.38" x2="149.86" y2="119.38" width="0.1524" layer="91"/>
-<pinref part="U1" gate="G$1" pin="11(MOSI)"/>
-<wire x1="132.08" y1="134.62" x2="149.86" y2="134.62" width="0.1524" layer="91"/>
-<wire x1="149.86" y1="134.62" x2="149.86" y2="119.38" width="0.1524" layer="91"/>
-<label x="137.16" y="134.62" size="1.778" layer="95"/>
+<wire x1="132.08" y1="101.6" x2="91.44" y2="101.6" width="0.1524" layer="91"/>
+<label x="93.98" y="157.48" size="1.778" layer="95"/>
+<pinref part="U1" gate="G$1" pin="RXI"/>
+<wire x1="109.22" y1="157.48" x2="91.44" y2="157.48" width="0.1524" layer="91"/>
+<wire x1="91.44" y1="157.48" x2="91.44" y2="101.6" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$42" class="0">

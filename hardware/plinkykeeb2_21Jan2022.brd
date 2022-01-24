@@ -206,13 +206,13 @@
 <hole x="60.96" y="30.48" drill="2.54"/>
 <hole x="137.16" y="30.48" drill="2.54"/>
 <hole x="191.77" y="30.48" drill="2.54"/>
-<text x="236.728" y="14.732" size="1.778" layer="21" ratio="10">MIDIOUT</text>
-<text x="236.855" y="3.556" size="1.778" layer="21" ratio="10">"AUDIO"</text>
+<text x="244.983" y="16.637" size="1.27" layer="21" ratio="10" rot="R180">MIDIOUT</text>
+<text x="244.475" y="5.588" size="1.27" layer="21" ratio="10" rot="R180">"AUDIO"</text>
 <text x="223.647" y="35.433" size="1.778" layer="21" ratio="10">KB2040 PRO MICRO</text>
 <text x="248.412" y="33.274" size="1.778" layer="22" rot="MR0">plinkykeeb2 22Jan2022</text>
 <text x="248.412" y="29.464" size="1.778" layer="22" rot="MR0">github.com/todbot/plinkykeeb</text>
-<text x="250.698" y="14.605" size="1.778" layer="21" ratio="10">"A"</text>
-<text x="3.683" y="17.653" size="1.778" layer="21" ratio="10" rot="R90">plinkykeeb</text>
+<text x="252.476" y="16.637" size="1.27" layer="21" ratio="10" rot="R180">"A"</text>
+<text x="3.429" y="22.479" size="1.778" layer="21" ratio="10" rot="R90">plinkykeeb</text>
 </plain>
 <libraries>
 <library name="SparkFun-Boards" urn="urn:adsk.eagle:library:509">
@@ -2300,9 +2300,9 @@ einem neuen Namen ab.</description>
 <wire x1="169.164" y1="27.94" x2="110.744" y2="27.94" width="0.2032" layer="16"/>
 <wire x1="229.87" y1="35.56" x2="236.22" y2="41.91" width="0.2032" layer="1"/>
 <wire x1="228.6" y1="35.56" x2="229.87" y2="35.56" width="0.2032" layer="1"/>
-<wire x1="219.583" y1="35.56" x2="228.6" y2="35.56" width="0.2032" layer="16"/>
-<wire x1="211.963" y1="27.94" x2="219.583" y2="35.56" width="0.2032" layer="16"/>
-<wire x1="169.164" y1="27.94" x2="211.963" y2="27.94" width="0.2032" layer="16"/>
+<wire x1="219.456" y1="35.56" x2="228.6" y2="35.56" width="0.2032" layer="16"/>
+<wire x1="211.836" y1="27.94" x2="219.456" y2="35.56" width="0.2032" layer="16"/>
+<wire x1="169.164" y1="27.94" x2="211.836" y2="27.94" width="0.2032" layer="16"/>
 <wire x1="86.995" y1="19.05" x2="67.945" y2="19.05" width="0.2032" layer="1"/>
 <wire x1="95.885" y1="27.94" x2="86.995" y2="19.05" width="0.2032" layer="16"/>
 <via x="20.955" y="13.335" extent="1-16" drill="0.4064"/>
@@ -3040,9 +3040,9 @@ einem neuen Namen ab.</description>
 <wire x1="4.445" y1="37.465" x2="4.445" y2="9.525" width="0.2032" layer="16"/>
 <wire x1="9.906" y1="42.926" x2="4.445" y2="37.465" width="0.2032" layer="16"/>
 <wire x1="210.82" y1="42.926" x2="9.906" y2="42.926" width="0.2032" layer="16"/>
-<wire x1="216.916" y1="36.83" x2="210.82" y2="42.926" width="0.2032" layer="16"/>
-<wire x1="230.251" y1="36.83" x2="216.916" y2="36.83" width="0.2032" layer="16"/>
-<wire x1="231.14" y1="35.941" x2="230.251" y2="36.83" width="0.2032" layer="16"/>
+<wire x1="216.662" y1="37.084" x2="210.82" y2="42.926" width="0.2032" layer="16"/>
+<wire x1="229.997" y1="37.084" x2="216.662" y2="37.084" width="0.2032" layer="16"/>
+<wire x1="231.14" y1="35.941" x2="229.997" y2="37.084" width="0.2032" layer="16"/>
 <wire x1="231.14" y1="34.544" x2="231.14" y2="35.941" width="0.2032" layer="16"/>
 <wire x1="231.14" y1="34.544" x2="223.52" y2="26.924" width="0.2032" layer="16"/>
 <wire x1="8.37" y1="5.6" x2="11.32" y2="5.6" width="0.2032" layer="16"/>
@@ -3140,13 +3140,14 @@ einem neuen Namen ab.</description>
 <wire x1="210.295" y1="12.463" x2="210.295" y2="7.735" width="0.2032" layer="16"/>
 <wire x1="210.295" y1="7.735" x2="209.66" y2="7.1" width="0.2032" layer="16"/>
 </signal>
-<signal name="N$45">
+<signal name="MIDIOUT">
 <contactref element="R1" pad="2"/>
 <contactref element="U1" pad="1"/>
-<wire x1="246.38" y1="41.91" x2="250.19" y2="38.1" width="0.2032" layer="16"/>
-<wire x1="250.19" y1="38.1" x2="250.19" y2="27.239" width="0.2032" layer="16"/>
-<wire x1="246.06" y1="23.109" x2="246.06" y2="20.32" width="0.2032" layer="16"/>
-<wire x1="250.19" y1="27.239" x2="246.06" y2="23.109" width="0.2032" layer="16"/>
+<wire x1="246.38" y1="41.91" x2="246.38" y2="30.353" width="0.2032" layer="16"/>
+<wire x1="248.412" y1="28.321" x2="246.38" y2="30.353" width="0.2032" layer="16"/>
+<wire x1="248.412" y1="28.321" x2="248.412" y2="25.207" width="0.2032" layer="16"/>
+<wire x1="246.06" y1="22.855" x2="246.06" y2="20.32" width="0.2032" layer="16"/>
+<wire x1="248.412" y1="25.207" x2="246.06" y2="22.855" width="0.2032" layer="16"/>
 </signal>
 <signal name="N$47">
 <contactref element="R3" pad="2"/>
@@ -3168,13 +3169,12 @@ einem neuen Namen ab.</description>
 </signal>
 <signal name="PWM_AUDIO">
 <contactref element="R7" pad="2"/>
-<contactref element="U1" pad="14"/>
-<wire x1="231.267" y1="22.987" x2="239.649" y2="14.605" width="0.2032" layer="16"/>
-<wire x1="224.663" y1="22.987" x2="231.267" y2="22.987" width="0.2032" layer="16"/>
-<wire x1="220.98" y1="26.67" x2="224.663" y2="22.987" width="0.2032" layer="16"/>
 <wire x1="250.19" y1="13.65" x2="250.19" y2="13.716" width="0.2032" layer="16"/>
-<wire x1="250.19" y1="13.716" x2="249.301" y2="14.605" width="0.2032" layer="16"/>
-<wire x1="249.301" y1="14.605" x2="239.649" y2="14.605" width="0.2032" layer="16"/>
+<contactref element="U1" pad="2"/>
+<wire x1="243.84" y1="41.91" x2="245.491" y2="43.561" width="0.2032" layer="16"/>
+<wire x1="245.491" y1="43.561" x2="247.538875" y2="43.561" width="0.2032" layer="16"/>
+<wire x1="247.538875" y1="43.561" x2="250.19" y2="40.909875" width="0.2032" layer="16"/>
+<wire x1="250.19" y1="40.909875" x2="250.19" y2="13.65" width="0.2032" layer="16"/>
 </signal>
 <signal name="N$42">
 <contactref element="J1" pad="2"/>
