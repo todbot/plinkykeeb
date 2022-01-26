@@ -10819,6 +10819,30 @@ DIN A3, landscape with location and doc. field</description>
 </nets>
 </sheet>
 </sheets>
+<errors>
+<approved hash="104,1,132.08,160.02,U1,RAW,+5V,,,"/>
+<approved hash="104,1,132.08,152.4,U1,VCC,+3V3,,,"/>
+<approved hash="104,1,261.62,233.68,LED1,VDD,N$11,,,"/>
+<approved hash="104,1,287.02,233.68,LED2,VDD,+5V,,,"/>
+<approved hash="104,1,312.42,233.68,LED3,VDD,+5V,,,"/>
+<approved hash="104,1,337.82,233.68,LED4,VDD,+5V,,,"/>
+<approved hash="104,1,363.22,233.68,LED5,VDD,+5V,,,"/>
+<approved hash="104,1,261.62,193.04,LED6,VDD,+5V,,,"/>
+<approved hash="104,1,287.02,193.04,LED7,VDD,+5V,,,"/>
+<approved hash="104,1,312.42,193.04,LED8,VDD,+5V,,,"/>
+<approved hash="104,1,337.82,193.04,LED9,VDD,+5V,,,"/>
+<approved hash="104,1,363.22,193.04,LED10,VDD,+5V,,,"/>
+<approved hash="104,1,261.62,152.4,LED11,VDD,+5V,,,"/>
+<approved hash="104,1,287.02,152.4,LED12,VDD,+5V,,,"/>
+<approved hash="104,1,312.42,152.4,LED13,VDD,+5V,,,"/>
+<approved hash="104,1,337.82,152.4,LED14,VDD,+5V,,,"/>
+<approved hash="104,1,363.22,152.4,LED15,VDD,+5V,,,"/>
+<approved hash="104,1,261.62,111.76,LED16,VDD,+5V,,,"/>
+<approved hash="104,1,287.02,111.76,LED17,VDD,+5V,,,"/>
+<approved hash="104,1,312.42,111.76,LED18,VDD,+5V,,,"/>
+<approved hash="104,1,337.82,111.76,LED19,VDD,+5V,,,"/>
+<approved hash="104,1,363.22,111.76,LED20,VDD,+5V,,,"/>
+</errors>
 </schematic>
 </drawing>
 <compatibility>
