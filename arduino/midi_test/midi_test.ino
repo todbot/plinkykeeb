@@ -66,9 +66,11 @@ void loop() {
     uint8_t note = note_base + e.bit.KEY;
     if( e.bit.EVENT == KEY_JUST_PRESSED ) { 
         MIDIusb.sendNoteOn(note, note_vel, note_chan);
+        MIDIserial.sendNoteOn(note, note_vel, note_chan);
     }
     if( e.bit.EVENT == KEY_JUST_RELEASED ) { 
          MIDIusb.sendNoteOn(note, 0, note_chan);  // note on w/ 0 vel == note off
+         MIDIserial.sendNoteOn(note, note_vel, 0);
     }
   }
 
