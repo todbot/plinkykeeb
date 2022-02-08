@@ -18,27 +18,28 @@ import audiocore
 import audiomixer
 from audiopwmio import PWMAudioOut as AudioOut
 
-
 # map key number to wave file
 # a list of which samples to play on which keys,
 # and if the sample should loop or not
+# if a key has no sample, use (None,None)
 wav_files = (
     # filename,           loop?
-    ('wav/909kick4b.wav', False),       # C
-    (None,None),                        # C#
-    ('wav/909snare2b.wav', False),      # D
-    (None, None),                       # D#
+    ('wav/909kick4.wav', False),        # C
+    ('wav/909clap1.wav', False),        # C#
+    ('wav/909snare2.wav', False),       # D
+    ('wav/909cym2.wav', False),         # D#
     (None, None),                       # E
     (None, None),                       # F
-    ('wav/909hatclosed2b.wav', False),  # F#
+    ('wav/909hatclosed2.wav', False),   # F#
     (None, None),                       # G
-    ('wav/909hatopen5b.wav', False),    # G#
+    ('wav/909hatopen5.wav', False),     # G#
     (None, None),                       # A
     (None, None),                       # A#
     (None, None),                       # B
-    ('wav/amenfull_22k_s16.wav', True), # C#
-    ('wav/ohohoh.wav', False),          # D
-    (None, None),                       # D#
+    ('wav/amenfull_22k_s16.wav', True), # C
+    ('wav/amen1_22k_s16.wav', True),    # C#
+    ('wav/ohohoh1.wav', True),          # D
+    ('wav/amen2_22k_s16.wav', True),    # D#
     (None, None),                       # E
 )
 
@@ -61,21 +62,21 @@ def handle_sample(num, pressed):
     (wav_file, loopit) = wav_files[num]
     if pressed:
         if wav_file is not None:
-            wave = audiocore.WaveFile(open(wav_file,"rb")) 
+            wave = audiocore.WaveFile(open(wav_file,"rb"))
             voice.play(wave,loop=loopit)
     else: # released
         if loopit:
             voice.stop()  # only stop looping samples, others one-shot
-
  
 while True:
     event = km.events.get()
     if event:
         print("key:%d %d/%d %d" % (event.key_number, event.pressed, event.released, event.timestamp) )
-        
-        if event.pressed:
-            handle_sample( event.key_number, True )
 
-        if event.released:
-            handle_sample( event.key_number, False )
+        if event.key_number < len(wav_files):
+            if event.pressed:
+                handle_sample( event.key_number, True )
+
+            if event.released:
+                handle_sample( event.key_number, False )
         
