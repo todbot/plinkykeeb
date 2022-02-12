@@ -57,7 +57,6 @@ while True:
 
     if spin_hue:
         hue = (time.monotonic() * 100 ) % 256
-        print(hue)
         leds.fill( rainbowio.colorwheel( int(hue) ) )
 
 
@@ -85,15 +84,16 @@ while True:
                 oct_switch = event.pressed
 
             # this is dumb, pitch up should be +8191, pitch middle 0, pitch down -8192
+            
             if event.key_number == 18: # pitchbend up
-                if oct_switch:
+                if event.pressed and oct_switch:
                     octave = octave+1
                 else:
                     pb_val = PitchBend(16383) if event.pressed else PitchBend(8192)
                     midi_serial.send( pb_val )
                     midi_usb.send( pb_val )
             if event.key_number == 17: # pitchbend down
-                if oct_switch:
+                if event.pressed and oct_switch:
                     octave = octave-1
                 else:
                     pb_val = PitchBend(0) if event.pressed else PitchBend(8192)
