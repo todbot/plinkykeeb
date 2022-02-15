@@ -147,14 +147,14 @@
 <layer number="195" name="mNames" color="7" fill="1" visible="no" active="yes"/>
 <layer number="196" name="mValues" color="7" fill="1" visible="no" active="yes"/>
 <layer number="199" name="Contour" color="7" fill="1" visible="no" active="yes"/>
-<layer number="200" name="200bmp" color="1" fill="10" visible="no" active="yes"/>
-<layer number="201" name="201bmp" color="2" fill="10" visible="no" active="yes"/>
-<layer number="202" name="202bmp" color="3" fill="10" visible="no" active="yes"/>
+<layer number="200" name="200bmp" color="1" fill="10" visible="yes" active="yes"/>
+<layer number="201" name="201bmp" color="2" fill="10" visible="yes" active="yes"/>
+<layer number="202" name="202bmp" color="3" fill="10" visible="yes" active="yes"/>
 <layer number="203" name="203bmp" color="4" fill="10" visible="no" active="yes"/>
 <layer number="204" name="204bmp" color="5" fill="10" visible="no" active="yes"/>
 <layer number="205" name="205bmp" color="6" fill="10" visible="no" active="yes"/>
 <layer number="206" name="206bmp" color="7" fill="10" visible="no" active="yes"/>
-<layer number="207" name="207bmp" color="8" fill="10" visible="yes" active="yes"/>
+<layer number="207" name="207bmp" color="8" fill="10" visible="no" active="yes"/>
 <layer number="208" name="208bmp" color="9" fill="10" visible="yes" active="yes"/>
 <layer number="209" name="209bmp" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="210" name="210bmp" color="7" fill="1" visible="no" active="yes"/>
@@ -189,7 +189,7 @@
 <layer number="255" name="routoute" color="7" fill="1" visible="no" active="yes"/>
 </layers>
 <board>
-<fusionsync huburn="a.cGVyc29uYWw6dWUyOWMzMmM3" projecturn="a.cGVyc29uYWw6dWUyOWMzMmM3IzIwMTgwMjExMTE3NDU0Nzgx" f3durn="urn:adsk.wipprod:dm.lineage:4HSctej6Rcm30rx-z4yGEg" pcbguid="" lastpulledtime="" lastsyncedchangeguid="" latestrevisionid="8855fd7d-d5df-4cbd-8284-c39dc488c9be" lastsyncedrevisionid="8855fd7d-d5df-4cbd-8284-c39dc488c9be" lastboardhashguid="5f43b209-c9d0-628b-38e8-ab44c5411fee" lastpushedtime="2022-02-02T01:43:49Z" linktopcb3d="false"/>
+<fusionteam huburn="a.cGVyc29uYWw6dWUyOWMzMmM3" projecturn="a.cGVyc29uYWw6dWUyOWMzMmM3IzIwMTQwNTIyMTMwODUwMQ" folderUrn="urn:adsk.wipprod:fs.folder:co.hppk1xOhTZ6C9BKK3fAJUg" urn="urn:adsk.wipprod:dm.lineage:2vhvDwxjSxC-K6p5w5Q--Q"  versionUrn="urn:adsk.wipprod:fs.file:vf.2vhvDwxjSxC-K6p5w5Q--Q?version=1" camFileUrn="" camFileVersionUrn="" lastpublishedchangeguid="2f74d3c6-43c7-99e9-ae9b-b9cf22c17f74"/>
 <plain>
 <wire x1="0" y1="40.64" x2="0" y2="2.54" width="0" layer="20"/>
 <wire x1="0" y1="2.54" x2="2.54" y2="0" width="0" layer="20" curve="90"/>
@@ -2027,7 +2027,7 @@ einem neuen Namen ab.</description>
 <attribute name="DIGI-KEY_PART_NUMBER" value="CP-3523SJCT-ND" x="245" y="7.62" size="1.778" layer="27" ratio="10" rot="R180" display="off"/>
 <attribute name="MF" value="CUI Devices" x="245" y="7.62" size="1.778" layer="27" ratio="10" rot="R180" display="off"/>
 <attribute name="MP" value="SJ-3523-SMT-TR" x="245" y="7.62" size="1.778" layer="27" ratio="10" rot="R180" display="off"/>
-<attribute name="NAME" x="249.006309375" y="7.341740625" size="1.27233125" layer="25"/>
+<attribute name="NAME" x="246.506309375" y="7.141740625" size="1.27233125" layer="25"/>
 <attribute name="PACKAGE" value="None" x="245" y="7.62" size="1.778" layer="27" ratio="10" rot="R180" display="off"/>
 <attribute name="PURCHASE-URL" value="https://pricing.snapeda.com/search/part/SJ-3523-SMT-TR/?ref=eda" x="245" y="7.62" size="1.778" layer="27" ratio="10" rot="R180" display="off"/>
 <attribute name="VALUE" x="248.20573125" y="14.23181875" size="1.27228125" layer="27" rot="R180"/>
@@ -2038,7 +2038,7 @@ einem neuen Namen ab.</description>
 <attribute name="DIGI-KEY_PART_NUMBER" value="CP-3523SJCT-ND" x="245" y="18.542" size="1.778" layer="27" ratio="10" rot="R180" display="off"/>
 <attribute name="MF" value="CUI Devices" x="245" y="18.542" size="1.778" layer="27" ratio="10" rot="R180" display="off"/>
 <attribute name="MP" value="SJ-3523-SMT-TR" x="245" y="18.542" size="1.778" layer="27" ratio="10" rot="R180" display="off"/>
-<attribute name="NAME" x="248.752309375" y="18.263740625" size="1.27233125" layer="25"/>
+<attribute name="NAME" x="246.452309375" y="18.063740625" size="1.27233125" layer="25"/>
 <attribute name="PACKAGE" value="None" x="245" y="18.542" size="1.778" layer="27" ratio="10" rot="R180" display="off"/>
 <attribute name="PURCHASE-URL" value="https://pricing.snapeda.com/search/part/SJ-3523-SMT-TR/?ref=eda" x="245" y="18.542" size="1.778" layer="27" ratio="10" rot="R180" display="off"/>
 <attribute name="VALUE" x="248.20573125" y="25.15381875" size="1.27228125" layer="27" rot="R180"/>
@@ -2310,11 +2310,9 @@ einem neuen Namen ab.</description>
 <wire x1="109.3932" y1="34.8999875" x2="109.3932" y2="37" width="0.2032" layer="16"/>
 <wire x1="109.3932" y1="37" x2="109.4" y2="37" width="0.2032" layer="16"/>
 <via x="109.4" y="37" extent="1-16" drill="0.4064"/>
-<wire x1="109.4" y1="37" x2="82" y2="37" width="0.2032" layer="1"/>
-<wire x1="76.5" y1="31.5" x2="68.6" y2="31.5" width="0.2032" layer="1"/>
-<wire x1="68.6" y1="31.5" x2="64.5" y2="27.4" width="0.2032" layer="1"/>
-<wire x1="64.5" y1="27.4" x2="64.5" y2="23.2" width="0.2032" layer="1"/>
-<wire x1="82" y1="37" x2="76.5" y2="31.5" width="0.2032" layer="1"/>
+<wire x1="109.4" y1="37" x2="75.8" y2="37" width="0.2032" layer="1"/>
+<wire x1="75.8" y1="37" x2="64.5" y2="25.7" width="0.2032" layer="1"/>
+<wire x1="64.5" y1="25.7" x2="64.5" y2="23.2" width="0.2032" layer="1"/>
 <wire x1="163.4" y1="36.9" x2="163.3" y2="37" width="0.2032" layer="1"/>
 <wire x1="163.3" y1="37" x2="109.4" y2="37" width="0.2032" layer="1"/>
 <via x="163.4" y="36.9" extent="1-16" drill="0.4064"/>
@@ -2591,11 +2589,11 @@ einem neuen Namen ab.</description>
 <wire x1="161.1244" y1="17.3686125" x2="162" y2="18.2442125" width="0.2032" layer="16"/>
 <wire x1="162" y1="18.2442125" x2="162" y2="21.4" width="0.2032" layer="16"/>
 <wire x1="161.1244" y1="10.6291875" x2="161.1244" y2="17.3686125" width="0.2032" layer="16"/>
-<wire x1="162" y1="21.4" x2="160.4" y2="23" width="0.2032" layer="1"/>
-<wire x1="160.4" y1="23" x2="157.5" y2="23" width="0.2032" layer="1"/>
-<wire x1="166.5" y1="5.5" x2="168.5" y2="5.5" width="0.2032" layer="1"/>
-<wire x1="168.5" y1="5.5" x2="169.8" y2="4.2" width="0.2032" layer="1"/>
-<wire x1="169.8" y1="4.2" x2="218.2" y2="4.2" width="0.2032" layer="1"/>
+<wire x1="162" y1="21.4" x2="159" y2="21.4" width="0.2032" layer="1"/>
+<wire x1="157.5" y1="23" x2="157.5" y2="22.9" width="0.2032" layer="1"/>
+<wire x1="159" y1="21.4" x2="157.5" y2="22.9" width="0.2032" layer="1"/>
+<wire x1="166.5" y1="5.5" x2="167.8" y2="4.2" width="0.2032" layer="1"/>
+<wire x1="167.8" y1="4.2" x2="218.2" y2="4.2" width="0.2032" layer="1"/>
 <via x="218.2" y="4.2" extent="1-16" drill="0.4064"/>
 <wire x1="218.2" y1="4.2" x2="218.2" y2="6.68105" width="0.2032" layer="16"/>
 <wire x1="218.2" y1="6.68105" x2="214.7" y2="10.18105" width="0.2032" layer="16"/>
@@ -3189,8 +3187,8 @@ einem neuen Namen ab.</description>
 </signal>
 </signals>
 <mfgpreviewcolors>
-<mfgpreviewcolor name="soldermaskcolor" color="0xC8FFFFFF"/>
-<mfgpreviewcolor name="silkscreencolor" color="0xFF000000"/>
+<mfgpreviewcolor name="soldermaskcolor" color="0xC8000000"/>
+<mfgpreviewcolor name="silkscreencolor" color="0xFFFFFFFF"/>
 <mfgpreviewcolor name="backgroundcolor" color="0xFF282828"/>
 <mfgpreviewcolor name="coppercolor" color="0xFFFFBF00"/>
 <mfgpreviewcolor name="substratecolor" color="0xFF786E46"/>
@@ -3202,11 +3200,6 @@ einem neuen Namen ab.</description>
 Since Version 8.2, EAGLE supports online libraries. The ids
 of those online libraries will not be understood (or retained)
 with this version.
-</note>
-<note version="8.3" severity="warning">
-Since Version 8.3, EAGLE supports Fusion synchronisation.
-This feature will not be available in this version and saving
-the document will break the link to the Fusion PCB feature.
 </note>
 <note version="8.3" severity="warning">
 Since Version 8.3, EAGLE supports URNs for individual library
