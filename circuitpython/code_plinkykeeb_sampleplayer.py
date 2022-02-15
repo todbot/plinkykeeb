@@ -2,6 +2,9 @@
 #
 # 5 Feb 2022 - @todbot / Tod Kurt - https://github.com/todbot/plinkykeeb
 #
+# Copy this file as "code.py" to your CIRCUITPY drive
+# Install "neopixel" library with "circup install neopixel"
+#
 # Convert files to appropriate WAV format (mono, 22050 Hz, 16-bit signed) with command:
 #  sox loop.mp3 -b 16 -c 1 -r 22050 loop.wav
 # or try:
@@ -15,6 +18,7 @@ import board
 import keypad
 import neopixel
 import rainbowio
+import supervisor
 
 import audiocore
 import audiomixer
@@ -47,18 +51,24 @@ wav_files = (
 
 leds = neopixel.NeoPixel(board.MISO, 20, brightness=0.2, auto_write=False)
 
+# wait a little bit, with a light show
+# so USB can stabilize and not garble & glitch audio
+for i in range(0,300):
+    leds.fill( rainbowio.colorwheel(i) );
+    leds.show()
+    time.sleep(0.01)
+print("ready to go!")
+
 # pins used by keyboard
 row_pins = (board.D7, board.D8, board.D9, board.D10)
 col_pins = (board.D2, board.D3, board.D4, board.D5, board.D6)
 
 km = keypad.KeyMatrix( row_pins=row_pins, column_pins=col_pins )
 
-# audio pin is RX (pin 1)
-audio = AudioOut(board.RX)
+audio = AudioOut( board.RX )
 mixer = audiomixer.Mixer(voice_count=len(wav_files), sample_rate=22050, channel_count=1,
                          bits_per_sample=16, samples_signed=True)
-# attach mixer to audio playback
-audio.play(mixer)
+audio.play(mixer) # attach mixer to audio playback
 
 # # load all the wavs into RAM
 # wavs = [None] * len(wav_files)
@@ -92,7 +102,7 @@ def handle_sample(num, pressed):
 
 
 # I like millis
-def millis(): return time.monotonic()*1000
+def millis(): return supervisor.ticks_ms()
 
 # scale a value by amount/256, expects an int, returns an int
 def scale8(val,amount):
@@ -109,7 +119,7 @@ led_millis = 5
 keys_pressed = []  # list of keys currently being pressed down
 while True:
     now = millis()
-    
+
     # update the LEDs, but only if keys pressed
     if now - led_last_update_millis > led_millis:
         led_last_update_millis = now
@@ -117,9 +127,9 @@ while True:
             leds[ i ] = rainbowio.colorwheel( int(time.monotonic() * 20) )
         dim_leds_by(leds, 250)  # fade everyone out slowly
         leds.show()
-    
+
     event = km.events.get()
-    
+
     if event:
         print("key:%d %d/%d %d" % (event.key_number, event.pressed, event.released, event.timestamp) )
 
@@ -131,4 +141,3 @@ while True:
             if event.released:
                 handle_sample( event.key_number, False )
                 keys_pressed.remove( event.key_number )
-        
