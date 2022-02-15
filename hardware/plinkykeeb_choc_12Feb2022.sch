@@ -10981,6 +10981,8 @@ unfilled</description>
 </sheet>
 </sheets>
 <errors>
+<approved hash="104,1,132.08,116.84,U1,RAW,+5V,,,"/>
+<approved hash="104,1,132.08,109.22,U1,VCC,+3V3,,,"/>
 <approved hash="104,1,261.62,233.68,LED1,VDD,N$11,,,"/>
 <approved hash="104,1,287.02,233.68,LED2,VDD,+5V,,,"/>
 <approved hash="104,1,312.42,233.68,LED3,VDD,+5V,,,"/>
