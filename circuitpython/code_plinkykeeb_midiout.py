@@ -48,17 +48,22 @@ oct_switch = False
 led_last_update_millis = 0
 led_millis = 5
 
+keys_pressed = []  # list of keys currently being pressed down
+
 while True:
     now = millis()
+    
+    # update the LEDs, but only if keys pressed
     if now - led_last_update_millis > led_millis:
         led_last_update_millis = now
-        dim_leds_by(leds, 250)
+        for i in keys_pressed:  # light up those keys that are pressed
+            leds[ i ] = rainbowio.colorwheel( int(time.monotonic() * 20) )
+        dim_leds_by(leds, 250)  # fade everyone out slowly
         leds.show()
 
     if spin_hue:
         hue = (time.monotonic() * 100 ) % 256
         leds.fill( rainbowio.colorwheel( int(hue) ) )
-
 
     event = km.events.get()
     if event:
@@ -68,16 +73,20 @@ while True:
         if event.key_number < 17:
             note_base = octave * 12
             note_val = event.key_number + note_base
+            
             if event.pressed:
                 noteon = NoteOn(note_val, note_velocity)
                 print("note on:",note_val)
                 midi_serial.send( noteon )
                 midi_usb.send( noteon )
                 leds[ event.key_number ] = rainbowio.colorwheel( time.monotonic() * 20 )
+                keys_pressed.append( event.key_number )
+                
             if event.released:
                 noteoff = NoteOn(note_val, 0)
                 midi_serial.send( noteoff )
                 midi_usb.send( noteoff )
+                keys_pressed.remove( event.key_number )
         else:
             spin_hue = event.pressed
             if event.key_number == 19: # octave up/dn enable
