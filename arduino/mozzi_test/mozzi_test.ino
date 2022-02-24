@@ -43,13 +43,14 @@ const int LED_PIN = 20;   // RP2040 GPIO20 / KB2040 "MISO" pin
 const int NUM_LEDS = 20;
 
 Oscil<SAW_ANALOGUE512_NUM_CELLS, AUDIO_RATE> aOscs [NUM_OSCS];
-//Oscil<COS2048_NUM_CELLS, CONTROL_RATE> kFilterMod(COS2048_DATA);
+Oscil<COS2048_NUM_CELLS, CONTROL_RATE> kFilterMod (COS2048_DATA); // filter mod
 Portamento <CONTROL_RATE> portamentos[NUM_OSCS];
 ADSR <CONTROL_RATE, AUDIO_RATE> envelope;
 LowPassFilter lpf;
 
 uint8_t resonance = 120; // range 0-255, 255 is most resonant
 uint8_t cutoff = 70;
+float mod_amount = 0.5; // filter mods
 int portamento_time = 100;  // milliseconds
 int env_release_time = 1000; // milliseconds
 
@@ -102,10 +103,11 @@ void setup() {
   MIDIusb.turnThruOff();
   MIDIserial.turnThruOff();
 
-  leds.begin();
-  leds.setBrightness(32);
-  leds.fill(0xff00ff);
-  leds.show();
+  // off to core1 with you!
+  //  leds.begin();
+  //  leds.setBrightness(32);
+  //  leds.fill(0xff00ff);
+  //  leds.show();
 
   startMozzi();
 
@@ -117,6 +119,18 @@ void loop() {
   audioHook();
 }
 
+// executes on core1
+void setup1() {
+  leds.begin();
+  leds.setBrightness(32);
+  leds.fill(0xff00ff);
+  leds.show();
+}
+// executes on core1
+void loop1() {
+  leds.show();
+}
+
 void noteOn(uint8_t note) {
   MIDIusb.sendNoteOn(note, note_vel, note_chan);
   MIDIserial.sendNoteOn(note, note_vel, note_chan);
@@ -125,7 +139,6 @@ void noteOn(uint8_t note) {
   }
   envelope.noteOn();
   leds.setPixelColor( note-note_base, 0xffffff);
-  leds.show();
 }
 
 void noteOff(uint8_t note) { 
@@ -133,7 +146,6 @@ void noteOff(uint8_t note) {
   MIDIserial.sendNoteOff(note, note_vel, note_chan);
   envelope.noteOff();
   leds.setPixelColor( note-note_base, 0xff00ff);
-  leds.show();
 }
 
 uint32_t lastLedMillis;
@@ -158,14 +170,20 @@ void updateControl() {
 
   // update adsr envelope 
   envelope.update();
-  
+
+  // update LFO filter mod
+  // map the lpf modulation into the filter range (0-255), corresponds with 0-8191Hz
+  uint8_t cutoff_freq = cutoff + (mod_amount * (kFilterMod.next()/2));
+  lpf.setCutoffFreqAndResonance(cutoff_freq, resonance);
+
   // update oscs 
   for(int i=0; i<NUM_OSCS; i++) {
     Q16n16 f = portamentos[i].next();
-    aOscs[i].setFreq_Q16n16(f);
+    aOscs[i].setFreq_Q16n16(f + 0.01*i); // detuning
   }
 
-//  leds.show();  // give a little click?
+  // off to core1 with you!
+  //leds.show();  // gives a little click to audio out? maybe put on core1
 
   // debug  
   if( millis() - lastMillis > 1000 ) { 
@@ -182,6 +200,7 @@ AudioOutput_t updateAudio() {
     int8_t a = aOscs[i].next();
     asig += a;
   }
+  asig = lpf.next( asig );
   return MonoOutput::fromNBit(19, envelope.next() * asig); // 16 = 8 signal bits + 8 envelope bits
   // return MonoOutput::fromAlmostNBit(12, asig); // should be 12 for 6 oscs
 }
