@@ -43,7 +43,7 @@ while True:
     event = km.events.get()
 
     if event:
-        print("key:%d %d/%d %d %d" % (event.key_number, event.pressed, event.released, event.timestamp) )
+        print("key:%d %d/%d %d" % (event.key_number, event.pressed, event.released, event.timestamp) )
         leds[ event.key_number ] = rainbowio.colorwheel( time.monotonic() * 20 )
 
         if event.key_number == 19:

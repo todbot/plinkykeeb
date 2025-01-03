@@ -89,6 +89,7 @@ void setup() {
   Mozzi.setPin(0,1);  // this sets RP2040 GP1 / KB2040 "RX"
   
   lpf.setCutoffFreqAndResonance(cutoff, resonance);
+  kFilterMod.setFreq(0.5f);     // slow
   for( int i=0; i<NUM_OSCS; i++) { 
      aOscs[i].setTable(SAW_ANALOGUE512_DATA);
      portamentos[i].setTime(portamento_time);
